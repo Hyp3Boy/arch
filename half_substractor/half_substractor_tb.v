@@ -47,6 +47,9 @@ half_substractor half_substractor_tb(a,b,y,borrow);
 
 initial 
     begin
+    $dumpfile("half_subtractor_tb.vcd"); // Nombre del archivo VCD de salida
+    $dumpvars(0, half_substractor_tb, a, b, y, borrow); // Señales a incluir en el archivo VCD
+
         a = 1'b0;
         b = 1'b0;
         #1;
