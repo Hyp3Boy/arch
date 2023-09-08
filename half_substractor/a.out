@@ -1,0 +1,65 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x121605f90 .scope module, "half_substractor_tb" "half_substractor_tb" 2 42;
+ .timescale -9 -12;
+v0x600003928630_0 .var "a", 0 0;
+v0x6000039286c0_0 .var "b", 0 0;
+v0x600003928750_0 .net "borrow", 0 0, L_0x6000020287e0;  1 drivers
+v0x6000039287e0_0 .net "y", 0 0, L_0x600002028770;  1 drivers
+S_0x121604660 .scope module, "half_substractor_tb" "half_substractor" 2 46, 3 3 0, S_0x121605f90;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+    .port_info 3 /OUTPUT 1 "borrow";
+L_0x600002028770 .functor XOR 1, v0x600003928630_0, v0x6000039286c0_0, C4<0>, C4<0>;
+L_0x6000020287e0 .functor AND 1, L_0x600002028850, v0x6000039286c0_0, C4<1>, C4<1>;
+L_0x600002028850 .functor NOT 1, v0x600003928630_0, C4<0>, C4<0>, C4<0>;
+v0x600003928360_0 .net "a", 0 0, v0x600003928630_0;  1 drivers
+v0x6000039283f0_0 .net "b", 0 0, v0x6000039286c0_0;  1 drivers
+v0x600003928480_0 .net "borrow", 0 0, L_0x6000020287e0;  alias, 1 drivers
+v0x600003928510_0 .net "x", 0 0, L_0x600002028850;  1 drivers
+v0x6000039285a0_0 .net "y", 0 0, L_0x600002028770;  alias, 1 drivers
+    .scope S_0x121605f90;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x600003928630_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x6000039286c0_0, 0, 1;
+    %delay 1000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x600003928630_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x6000039286c0_0, 0, 1;
+    %delay 1000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x600003928630_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x6000039286c0_0, 0, 1;
+    %delay 1000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x600003928630_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x6000039286c0_0, 0, 1;
+    %delay 1000, 0;
+    %vpi_call 2 66 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x121605f90;
+T_1 ;
+    %vpi_call 2 70 "$monitor", "A=%b, B=%b, Y=%b, Borrow=%b", v0x600003928630_0, v0x6000039286c0_0, v0x6000039287e0_0, v0x600003928750_0 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "half_substractor_tb.v";
+    "half_substractor.v";
