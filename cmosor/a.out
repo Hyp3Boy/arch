@@ -1,0 +1,72 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x113e04080 .scope module, "cmosor_tb" "cmosor_tb" 2 3;
+ .timescale -9 -12;
+v0x6000032c43f0_0 .var "A", 0 0;
+v0x6000032c4480_0 .var "B", 0 0;
+RS_0x1080080d0 .resolv tri, L_0x600002bc8380, L_0x600002bc83f0;
+v0x6000032c4510_0 .net8 "Y", 0 0, RS_0x1080080d0;  2 drivers, strength-aware
+S_0x113e041f0 .scope module, "cmosor_tb" "cmosor" 2 7, 3 2 0, S_0x113e04080;
+ .timescale -9 -12;
+    .port_info 0 /OUTPUT 1 "Y";
+    .port_info 1 /INPUT 1 "A";
+    .port_info 2 /INPUT 1 "B";
+L_0x600002bc8150 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x600002bc81c0 .functor PMOS 1, L_0x600002bc8150, v0x6000032c43f0_0, C4<0>, C4<0>;
+L_0x600002bc8230 .functor PMOS 1, L_0x600002bc81c0, v0x6000032c4480_0, C4<0>, C4<0>;
+L_0x600002bc80e0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x600002bc82a0 .functor NMOS 1, L_0x600002bc80e0, v0x6000032c43f0_0, C4<0>, C4<0>;
+L_0x600002bc8310 .functor NMOS 1, L_0x600002bc80e0, v0x6000032c4480_0, C4<0>, C4<0>;
+RS_0x108008130 .resolv tri, L_0x600002bc8230, L_0x600002bc82a0, L_0x600002bc8310;
+L_0x600002bc8380 .functor PMOS 1, L_0x600002bc8150, RS_0x108008130, C4<0>, C4<0>;
+L_0x600002bc83f0 .functor NMOS 1, L_0x600002bc80e0, RS_0x108008130, C4<0>, C4<0>;
+v0x6000032c4000_0 .net "A", 0 0, v0x6000032c43f0_0;  1 drivers
+v0x6000032c4090_0 .net "B", 0 0, v0x6000032c4480_0;  1 drivers
+v0x6000032c4120_0 .net8 "GND", 0 0, L_0x600002bc80e0;  1 drivers, strength-aware
+v0x6000032c41b0_0 .net8 "VDD", 0 0, L_0x600002bc8150;  1 drivers, strength-aware
+v0x6000032c4240_0 .net8 "Y", 0 0, RS_0x1080080d0;  alias, 2 drivers, strength-aware
+v0x6000032c42d0_0 .net8 "w1", 0 0, L_0x600002bc81c0;  1 drivers, strength-aware
+v0x6000032c4360_0 .net8 "w2", 0 0, RS_0x108008130;  3 drivers, strength-aware
+    .scope S_0x113e04080;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x6000032c43f0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x6000032c4480_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x6000032c43f0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x6000032c4480_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x6000032c43f0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x6000032c4480_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x6000032c43f0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x6000032c4480_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 15 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x113e04080;
+T_1 ;
+    %vpi_call 2 19 "$monitor", "A=%b, B=%b, Y=%b", v0x6000032c43f0_0, v0x6000032c4480_0, v0x6000032c4510_0 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "cmosor_tb.v";
+    "cmosor.v";
