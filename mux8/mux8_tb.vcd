@@ -1,0 +1,155 @@
+$date
+	Sat Sep  9 10:35:16 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module mux8_tb $end
+$var wire 1 ! y $end
+$var reg 1 " a0 $end
+$var reg 1 # a1 $end
+$var reg 1 $ a2 $end
+$var reg 1 % a3 $end
+$var reg 1 & a4 $end
+$var reg 1 ' a5 $end
+$var reg 1 ( a6 $end
+$var reg 1 ) a7 $end
+$var reg 1 * s0 $end
+$var reg 1 + s1 $end
+$var reg 1 , s2 $end
+$scope module m0 $end
+$var wire 1 " a0 $end
+$var wire 1 # a1 $end
+$var wire 1 $ a2 $end
+$var wire 1 % a3 $end
+$var wire 1 & a4 $end
+$var wire 1 ' a5 $end
+$var wire 1 ( a6 $end
+$var wire 1 ) a7 $end
+$var wire 1 * s0 $end
+$var wire 1 + s1 $end
+$var wire 1 , s2 $end
+$var wire 1 ! y $end
+$var wire 1 - w6 $end
+$var wire 1 . w5 $end
+$var wire 1 / w4 $end
+$var wire 1 0 w3 $end
+$var wire 1 1 w2 $end
+$var wire 1 2 w1 $end
+$scope module m0 $end
+$var wire 1 " a0 $end
+$var wire 1 # a1 $end
+$var wire 1 * s $end
+$var reg 1 2 y $end
+$upscope $end
+$scope module m1 $end
+$var wire 1 $ a0 $end
+$var wire 1 % a1 $end
+$var wire 1 * s $end
+$var reg 1 1 y $end
+$upscope $end
+$scope module m2 $end
+$var wire 1 & a0 $end
+$var wire 1 ' a1 $end
+$var wire 1 * s $end
+$var reg 1 0 y $end
+$upscope $end
+$scope module m3 $end
+$var wire 1 ( a0 $end
+$var wire 1 ) a1 $end
+$var wire 1 * s $end
+$var reg 1 / y $end
+$upscope $end
+$scope module m4 $end
+$var wire 1 2 a0 $end
+$var wire 1 1 a1 $end
+$var wire 1 + s $end
+$var reg 1 . y $end
+$upscope $end
+$scope module m5 $end
+$var wire 1 0 a0 $end
+$var wire 1 / a1 $end
+$var wire 1 + s $end
+$var reg 1 - y $end
+$upscope $end
+$scope module m6 $end
+$var wire 1 . a0 $end
+$var wire 1 - a1 $end
+$var wire 1 , s $end
+$var reg 1 ! y $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+02
+01
+00
+0/
+0.
+0-
+0,
+0+
+0*
+0)
+0(
+0'
+0&
+0%
+0$
+0#
+0"
+0!
+$end
+#20000
+1,
+#30000
+0,
+1+
+#40000
+1,
+#50000
+0,
+0+
+1*
+#60000
+1,
+#70000
+0,
+1+
+#80000
+1,
+#90000
+0,
+0+
+0*
+1)
+#100000
+1,
+#110000
+0,
+1+
+#120000
+1,
+#130000
+1/
+0,
+0+
+1*
+#140000
+1,
+#150000
+1-
+0,
+1+
+#160000
+1!
+1,
+#170000
