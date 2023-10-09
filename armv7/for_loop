@@ -1,0 +1,9 @@
+		;		R0 = i, R1 = sum
+		MOV		R0, #9 ; i = 9
+		MOV		R1, #0 ; sum = 0
+FOR
+		ADD		R1, R1, R0 ; sum=sum + i
+		SUBS		R0, R0, #1 ; i = i – 1, el S, activa los flags, como si fuera un comodin
+		;		and set flags
+		BNE		FOR ; if (i!=0), o sea mientras Z = 0, regreso al inicio del for
+		;		repeat loop

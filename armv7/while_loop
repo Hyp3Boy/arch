@@ -1,0 +1,11 @@
+		;		R0 = pow, R1 = x
+		MOV		R0, #1 ; pow = 1
+		MOV		R1, #0 ; x = 0
+WHILE
+		CMP		R0, #128 ; R0-128
+		BEQ		DONE ; if (pow==128)
+		;		exit loop
+		LSL		R0, R0, #1 ; pow=pow*2, se multiplica por 2, ya que hace un left shift en 1 bit hacia la izquierda
+		ADD		R1, R1, #1 ; x=x+1
+		B		WHILE ; repeat loop
+DONE
